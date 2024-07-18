@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400');
 @font-face{
     font-family:'Montserrat';
     src:url("fonts/Montserrat-Black.eot");
@@ -804,8 +805,9 @@ body{
 }
 .work--lockup .slider--item-description{
     display:none;
-    max-width:250px;
-    margin:0 auto
+    max-width:500px;
+    margin:0 auto;
+    height: 100px;
 }
 .work--lockup .slider--item-image{
     width:150px;
@@ -921,6 +923,7 @@ body{
         display:none
     }
 }
+
 .about{
     position:relative;
     display:-webkit-box;
@@ -941,6 +944,153 @@ body{
     justify-content:center;
     margin:0 auto
 }
+.button ul {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    display:flex;
+    margin:0;
+    padding:0;
+  }
+
+  .button ul li {
+    list-style:none;
+    margin:0 5px;
+  }
+
+  .button ul li a .fa, .button ul li a .fab {
+    font-size: 40px;
+    color: #262626;
+    line-height:80px;
+    transition: .5s;
+    padding-right: 14px;
+  }
+
+  .button ul li a span {
+    padding:0;
+    margin:0;
+    position:absolute;
+    top: 30px;
+    color: #262626;
+    letter-spacing: 1px;
+    transition: .5s;
+  }
+
+  .button ul li a {
+    text-decoration: none;
+    display:absolute;
+    display:block;
+    width:180px;
+    height:72px;
+    background: #fff;
+    text-align:left;
+    padding-left: 20px;
+    transform: rotate(-30deg) skew(25deg) translate(0,0);
+    transition:.5s;
+    box-shadow: -20px 20px 10px rgba(0,0,0,.5);
+  }
+  .button ul li a:before {
+    content: '';
+    position: absolute;
+    top:10px;
+    left:-20px;
+    height:100%;
+    width:20px;
+    background: #b1b1b1;
+    transform: .5s;
+    transform: rotate(0deg) skewY(-45deg);
+  }
+  .button ul li a:after {
+    content: '';
+    position: absolute;
+    bottom:-20px;
+    left:-10px;
+    height:20px;
+    width:100%;
+    background: #b1b1b1;
+    transform: .5s;
+    transform: rotate(0deg) skewX(-45deg);
+  }
+
+  .button ul li a:hover {
+    transform: rotate(-30deg) skew(25deg) translate(20px,-15px);
+    box-shadow: -50px 50px 50px rgba(0,0,0,.5);
+  }
+
+  .button ul li:hover .fa, .button ul li:hover .fab {
+    color:#fff;
+  }
+
+  .button ul li:hover span {
+    color:#fff;
+  }
+
+  .button ul li.gmail:hover a{
+    background: #dd4b39;
+  }
+  .button ul li.gmail:hover a:before{
+    background: #b33a2b;
+  }
+  .button ul li.gmail:hover a:after{
+    background: #e66a5a;
+  }
+
+  .button ul li.linkedin:hover a{
+    background: #0077B5;
+  }
+  .button ul li.linkedin:hover a:before{
+    background: #02689f;
+  }
+  .button ul li.linkedin:hover a:after{
+    background: #2eadf1;
+  }
+
+  .button ul li.leetcode:hover a{
+    background: #2a2a2a;
+  }
+  .button ul li.leetcode:hover a:before{
+    background: #010101;
+  }
+  .button ul li.leetcode:hover a:after{
+    background: #525252;
+  }
+
+  .button ul li.stack-overflow:hover a{
+    background: #f47f24;
+  }
+  .button ul li.stack-overflow:hover a:before{
+    background: rgb(202, 93, 10);
+  }
+  .button ul li.stack-overflow:hover a:after{
+    background: rgb(249, 142, 61);;
+  }
+
+  .button ul li.github:hover a{
+    background: #171515;
+  }
+  .button ul li.github:hover a:before{
+    background: #121111;
+  }
+  .button ul li.github:hover a:after{
+    background: #2b2727;
+  }
+
+
+  .button ul li.resume:hover a{
+    background: #ff008d;
+  }
+  .button ul li.resume:hover a:before{
+    background: #a8005c;
+  }
+  .button ul li.resume:hover a:after{
+    background: rgb(204 43 132);
+  }
+
+
+  .button .second-ul{
+    left: 50%;
+    }
 @media (max-width: 1180px){
     .about{
         max-width:100%
@@ -1191,7 +1341,7 @@ body{
     list-style:none
 }
 .contact--lockup .modal--options>li{
-    width:130px;
+    width:165px;
     margin:0 auto 25px auto
 }
 .contact--lockup .modal--options li:nth-child(1){
@@ -1292,6 +1442,7 @@ body{
     margin:30px 0
 }
 .work-request--options .options-a{
+    position: relative;
     display:-webkit-box;
     display:-webkit-flex;
     display:-ms-flexbox;
@@ -1300,7 +1451,8 @@ body{
     -webkit-box-pack:justify;
     -webkit-justify-content:space-between;
     -ms-flex-pack:justify;
-    justify-content:space-between
+    justify-content:space-between;
+    height: 127px;
 }
 .work-request--options .options-b{
     display:-webkit-box;
@@ -1402,7 +1554,21 @@ body{
     }
     .work-request--options .options-a,.work-request--options .options-b{
         display:block;
-        width:auto
+        width:auto;
+    }
+    .work-request--options.socials {
+        flex-direction: column;
+    }
+    .work-request--options.socials .options-a {
+        height: auto;
+    }
+    .work-request--options.socials ul {
+        position: initial;
+        transform: none;
+        flex-direction: column;
+    }
+    .work-request--options.socials li {
+        margin: 20px 5px;
     }
 }
 @media (max-width: 600px){
